@@ -148,6 +148,12 @@ SDL.SDLModelData = Em.Object.create(
      */
     naviVideo: {},
     /**
+     * Video canvas object for navigationApp
+     *
+     * @type {Object}
+     */
+    naviCanvas: {},
+    /**
      * Array of strings came in SDL.GetURLS response
      *
      * @type {Object}
@@ -458,7 +464,7 @@ SDL.SDLModelData = Em.Object.create(
           'fieldName': 'timeToDestination',
           'fieldText': 'mainField6'
         }
-      ],
+      ]/*,
       'softButtons': [
         {
           'text': 'Menu',
@@ -480,7 +486,7 @@ SDL.SDLModelData = Em.Object.create(
           'isHighlighted': false,
           'softButtonID': 4
         }
-      ]
+      ]*/
     },
     /**
      * List of registered applications, To prevent errors without registered

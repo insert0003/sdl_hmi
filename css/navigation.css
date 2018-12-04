@@ -1,6 +1,7 @@
 /*NAVIGATION CSS*/
 
 #navigationView.navigationView {
+    top: -48px;
     width: 800px;
     height: 480px;
     background: url(../images/nav/bg.png) no-repeat;

@@ -1,5 +1,5 @@
 #status_info {
-	top: 0px;
+	top: -48px;
 	right: 0px;
 	text-align: right;
 	font-size: 21px;
@@ -20,6 +20,7 @@
 }
 
 #info_view {
+	top: -48px;
 	width: 800px;
 	height: 480px;
 }

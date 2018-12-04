@@ -1,5 +1,6 @@
 #settingsView .in_settings_separate_view {
-    top: 48px;
+    position: absolute;
+    top: 0px;
     width: 800px;
     height: 382px;
     background: black;
@@ -71,7 +72,7 @@
     background: #333;
     width: 150px;
     height: 300px;
-    top: 90px;
+    top: 42px;
 }
 
 #settings_leftMenu .menu-item.info_active {
@@ -108,7 +109,7 @@
 
 #settingsView .in_settings_view {
     position: absolute;
-    top: 48px;
+    top: 0px;
     left: 153px;
     width: 647px;
     height: 384px;

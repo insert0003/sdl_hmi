@@ -977,7 +977,7 @@ SDL.SDLController = Em.Object.extend(
       }
       if (list_changed) {
         var message = 'Was found ' + params.applications.length + ' apps';
-        SDL.PopUp.create().appendTo('body').popupActivate(message);
+//        SDL.PopUp.create().appendTo('body').popupActivate(message);
       }
       SDL.InfoAppsView.showAppList();
     },

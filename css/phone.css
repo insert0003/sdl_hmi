@@ -6,6 +6,7 @@
  * @version		2.0
  */
 #phone {
+	top: 0px;
 	width: 800px;
 	height: 480px;
 	background: url(../images/phone/bg.png) no-repeat;
@@ -121,7 +122,8 @@
  PHONE STATUS BAR 
 */
 #status_phone {
-	top: 0px;
+	top: -48px;
+	position: absolute;
 	left: 0px;
 	font-size: 21px;
 	cursor: pointer;
