@@ -181,12 +181,14 @@ FFW.RPCClient = Em.Object.extend(
      */
     registerRPCComponent: function() {
       this.registerRequestId = this.idStart;
+      var name = this.componentName;
+      /*if(this.componentName == "TTS"){name = "Navigation";}*/
       var JSONMessage = {
         'jsonrpc': '2.0',
         'id': this.registerRequestId,
         'method': 'MB.registerComponent',
         'params': {
-          'componentName': this.componentName
+          'componentName': name
         }
       };
       this.send(JSONMessage);

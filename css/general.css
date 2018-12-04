@@ -51,7 +51,7 @@ div {
 }
 
 .windowText {
-    top: 190px;
+    top: 142px;
     width: 800px;
     font-size: 80px;
     color: white;
@@ -63,14 +63,14 @@ div {
     background: url(../images/home/home_main_image.png) no-repeat;
     width: 800px;
     height: 369px;
-    top: 56px;
+    top: 8px;
 }
 
 .rev #home {
     background: url(../images/home/home_screen.png) no-repeat;
     width: 800px;
     height: 369px;
-    top: 56px;
+    top: 8px;
 }
 
 /* Climate Status */
@@ -98,7 +98,8 @@ div {
 
 /* Navigation Status */
 #status_nav {
-    top: 0px;
+    position: absolute;
+    top: -48px;
     right: 0px;
     text-align: right;
     font-size: 21px;
@@ -121,11 +122,12 @@ div {
 
 /*FORD CONTAINER  DEFAULT DIMANSIONS */
 #app {
-    /*position:relative;*/
+    position:relative;
     width: 800px;
-    height: 480px;
-    /*overflow: hidden;
-     Mac font smoothing */
+    height: 432px;
+    top: 48px;
+    /*overflow: hidden;*/
+     /*Mac font smoothing */
     -webkit-font-smoothing: antialiased;
     /*margin: 25px auto;*/
 }
@@ -216,7 +218,7 @@ div {
 
 #driverDistraction .driverDistraction {
     left: 200px;
-    width: 400px;
+    width: 480px;
     height: 200px;
     z-index: 2;
     top: 140px;
@@ -397,9 +399,9 @@ div {
 
 #app_top_menu_cont {
     z-index: 10000;
-    top: 0px;
     left: 275px;
-    position: relative;
+    top: -48px;
+    position: absolute;
     pointer-events: none;
 }
 
@@ -612,6 +614,7 @@ div {
 
 /*MEDIA BLOCK CONTAINER*/
 #media {
+    top: -48px;
     width: 800px;
     height: 480px;
     background: url(../images/media/bg.png) no-repeat;

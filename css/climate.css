@@ -18,8 +18,9 @@
     margin-top: 10px;
 }
 #climate_control{
+    top: -48px;
     width: 800px;
-    height: 480px;
+    height: 432px;
     background: url(../images/climate/bg.png) no-repeat;
 }
 

@@ -119,6 +119,7 @@ SDL.SDLModel = Em.Object.extend({
 
     if (event.target.parentElement.className.indexOf('navButton') >= 0 ||
       event.target.className.indexOf('navButton') >= 0) {
+      console.log('zhouxin 122 return');
       return;
     }
 
@@ -159,14 +160,14 @@ SDL.SDLModel = Em.Object.extend({
 
       var events = [];
       for (var i = 0; i < changedTouches; i++) {
-
-        if (event.originalEvent.changedTouches && (
-          event.originalEvent.changedTouches[i].pageX >
-          SDL.SDLVehicleInfoModel.vehicleData.displayResolution.width ||
-          event.originalEvent.changedTouches[i].pageY >
-          SDL.SDLVehicleInfoModel.vehicleData.displayResolution.height)) {
-          return;
-        }
+ //       if (event.originalEvent.changedTouches && (
+ //         event.originalEvent.changedTouches[i].pageX >
+ //         SDL.SDLVehicleInfoModel.vehicleData.displayResolution.width ||
+ //         event.originalEvent.changedTouches[i].pageY >
+ //         SDL.SDLVehicleInfoModel.vehicleData.displayResolution.height)) {
+ //     	  console.log('zhouxin 169 return');
+ //         return;
+ //       }
 
         events[i] = {};
         events[i].c = [{}];
@@ -177,8 +178,8 @@ SDL.SDLModel = Em.Object.extend({
           event.originalEvent.changedTouches[i].pageX :
           event.originalEvent.pageX;
         events[i].c[0].y = event.originalEvent.changedTouches ?
-          event.originalEvent.changedTouches[i].pageY :
-          event.originalEvent.pageY;
+          event.originalEvent.changedTouches[i].pageY-48 :
+          event.originalEvent.pageY-48;
         events[i].ts = [parseInt(event.timeStamp)];
 
       }
@@ -389,7 +390,25 @@ SDL.SDLModel = Em.Object.extend({
    * @param {Object}
    */
   startStream: function(request) {
+/*    if(!SDL.SDLModel.data.naviCanvas.canvas) {
+      var canvas = document.getElementById('html5Canvas');
 
+      // Create h264 player
+      var uri = "ws://127.0.0.1:8080"; // + document.location.host;
+      var wsavc = new WSAvcPlayer(canvas, "webgl", 1, 35);
+      wsavc.connect(uri);
+
+      //expose instance for button callbacks
+      SDL.SDLModel.data.naviCanvas = wsavc;
+    }*/
+    
+    setTimeout(
+      function() {
+        SDL.SDLModel.data.naviCanvas.playStream();
+      },1000
+    );
+
+/*
     var appID = null;
 
     if (SDL.SDLController.model &&
@@ -405,7 +424,7 @@ SDL.SDLModel = Em.Object.extend({
       appID = SDL.SDLModel.data.stateLimited;
     }
 
-    SDL.SDLModel.playVideo(appID);
+    SDL.SDLModel.playVideo(appID);*/
   },
 
   /**
@@ -435,7 +454,19 @@ SDL.SDLModel = Em.Object.extend({
    * @param {Number}
    */
   stopStream: function(appID) {
+/*    if(!SDL.SDLModel.data.naviCanvas.canvas) {
+      var canvas = document.getElementById('html5Canvas');
 
+      // Create h264 player
+      var uri = "ws://127.0.0.1:8080"; // + document.location.host;
+      var wsavc = new WSAvcPlayer(canvas, "webgl", 1, 35);
+      wsavc.connect(uri);
+
+      //expose instance for button callbacks
+      SDL.SDLModel.data.naviCanvas = wsavc;
+    }
+    SDL.SDLModel.data.naviCanvas.stopStream();*/
+/*
     var createVideoView = Ember.View.create({
           templateName: 'video',
           template: Ember.Handlebars.compile('<video id="html5Player"></video>')
@@ -449,7 +480,7 @@ SDL.SDLModel = Em.Object.extend({
     videoChild = SDL.NavigationAppView.createChildView(createVideoView);
 
     SDL.NavigationAppView.get('childViews').pushObject(videoChild);
-    SDL.NavigationAppView.set('videoView', videoChild);
+    SDL.NavigationAppView.set('videoView', videoChild);*/
   },
 
   /**

@@ -39,6 +39,7 @@
 }
 
 .sdl-window {
+    top: -48px;
     width: 800px;
     height: 480px;
     background-color: #000;
@@ -271,7 +272,7 @@
 /* ScrollableMessage */
 #ScrollableMessage.ScrollableMessage {
     left: 0;
-    top: 0;
+    top: -48px;
     width: 800px;
     height: 480px;
     /*z-index: 1000;*/
@@ -284,7 +285,7 @@
 }
 
 #ScrollableMessage .backButton {
-    top: 80px;
+    top: 32px;
     width: 48px;
     height: 48px;
     border: 1px solid #333;
@@ -292,7 +293,7 @@
 }
 
 #ScrollableMessage .titleText {
-    top: 80px;
+    top: 32px;
     left: 75px;
     width: 620px;
     height: 20px;
@@ -1068,7 +1069,7 @@
     text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;
-    top: 283px;
+    top: 289px;
     right: 6px;
     width: 105px;
     position: absolute;
@@ -1076,13 +1077,13 @@
 
 #AlertManeuverPopUp .closeButton {
     width: 170px;
-    top: 180px;
+    top: 132px;
     left: 110px;
 }
 
 #AlertPopUp .alertSoftButtons {
     margin-left: 8px;
-    top: 120px;
+    top: 72px;
     width: 386px;
 }
 
@@ -1130,17 +1131,17 @@
 }
 
 #AudioPassThruPopUp .buttonRetry {
-    top: 120px;
+    top: 72px;
     width: 175px;
 }
 
 #AudioPassThruPopUp .buttonDone {
-    top: 120px;
+    top: 72px;
     width: 175px;
 }
 
 #AudioPassThruPopUp .buttonCancel {
-    top: 120px;
+    top: 72px;
     width: 372px;
 }
 
@@ -1352,6 +1353,7 @@
 
 /* SDL Slider*/
 #media_sdl_slider_view {
+    top: -48px;
     width: 800px;
     height: 480px;
     z-index: 1000;
@@ -1377,6 +1379,7 @@
 
 /* SDL Perform Interaction Choise */
 #media_app_perform_interaction_view {
+    top: -48px;
     width: 800px;
     height: 480px;
     z-index: 1000;
@@ -1415,6 +1418,7 @@
 
 /* SDL Media Options */
 #media_app_options_view {
+    top: 48px;
     width: 800px;
     height: 480px;
     z-index: 2002;

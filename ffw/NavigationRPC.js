@@ -289,20 +289,20 @@ FFW.Navigation = FFW.RPCObserver.create(
           }
           case 'Navigation.StartAudioStream':
           {
-            var text = 'Would you like to start Audio stream?';
-            if (this.startAudioStreamingPopup && this.startAudioStreamingPopup.active) {
-              this.startAudioStreamingPopup.deactivate();
-            }
+//            var text = 'Would you like to start Audio stream?';
+//            if (this.startAudioStreamingPopup && this.startAudioStreamingPopup.active) {
+//              this.startAudioStreamingPopup.deactivate();
+//            }
 
-            this.startAudioStreamingPopup = SDL.PopUp.create().appendTo('body').popupActivate(
-              text, function(result) {
-                if (result) {
+//            this.startAudioStreamingPopup = SDL.PopUp.create().appendTo('body').popupActivate(
+//              text, function(result) {
+//                if (result) {
                   FFW.Navigation.sendNavigationResult(
                     SDL.SDLModel.data.resultCode.SUCCESS,
                     request.id,
                     request.method
                   );
-                } else if (result === false) {
+/*                } else if (result === false) {
                   FFW.Navigation.sendError(
                     SDL.SDLModel.data.resultCode.REJECTED,
                     request.id,
@@ -311,7 +311,7 @@ FFW.Navigation = FFW.RPCObserver.create(
                   );
                 }
               }
-            );
+            );*/
             SDL.SDLController.getApplicationModel(
               request.params.appID
             ).navigationAudioStream = request.params.url;
@@ -322,10 +322,10 @@ FFW.Navigation = FFW.RPCObserver.create(
             SDL.SDLController.getApplicationModel(
               request.params.appID
             ).navigationAudioStream = null;
-            if (this.startAudioStreamingPopup && this.startAudioStreamingPopup.active) {
-              this.startAudioStreamingPopup.deactivate();
-              this.set('startAudioStreamingPopup', null);
-            }
+//            if (this.startAudioStreamingPopup && this.startAudioStreamingPopup.active) {
+//              this.startAudioStreamingPopup.deactivate();
+//              this.set('startAudioStreamingPopup', null);
+//            }
             this.sendNavigationResult(
               SDL.SDLModel.data.resultCode.SUCCESS,
               request.id,
@@ -372,22 +372,31 @@ FFW.Navigation = FFW.RPCObserver.create(
           }
           case 'Navigation.StartStream':
           {
-            var text = 'Would you like to start Video stream?';
-            if (this.startVideoStreamingPopup && this.startVideoStreamingPopup.active) {
-              this.startVideoStreamingPopup.deactivate();
-            }
+//            var text = 'Would you like to start Video stream?';
+//            if (this.startVideoStreamingPopup && this.startVideoStreamingPopup.active) {
+//              this.startVideoStreamingPopup.deactivate();
+//            }
 
-            this.startVideoStreamingPopup = SDL.PopUp.create().appendTo('body').popupActivate(
-              text, function(result) {
-                if (result) {
+          if(!SDL.SDLModel.data.naviCanvas.canvas) {
+            var canvas = document.getElementById('html5Canvas');
+            // Create h264 player
+            var uri = "ws://127.0.0.1:8080"; // + document.location.host;
+            SDL.SDLModel.data.naviCanvas = new WSAvcPlayer(canvas, "webgl", 1, 35);
+            SDL.SDLModel.data.naviCanvas.connect(uri);
+          }
+//            this.startVideoStreamingPopup = SDL.PopUp.create().appendTo('body').popupActivate(
+//              text, function(result) {
+//                if (result) {
                   SDL.SDLController.getApplicationModel(request.params.appID)
                     .set('navigationStream', request.params.url);
+                  Em.Logger.log('TTED >>>'+request.params.url);
+
                   FFW.Navigation.sendNavigationResult(
                     SDL.SDLModel.data.resultCode.SUCCESS,
                     request.id,
                     request.method
                   );
-                } else if (result === false) {
+/*                } else if (result === false) {
                   FFW.Navigation.sendError(
                     SDL.SDLModel.data.resultCode.REJECTED,
                     request.id,
@@ -396,7 +405,7 @@ FFW.Navigation = FFW.RPCObserver.create(
                   );
                 }
               }
-            );
+            );*/
             SDL.SDLController.getApplicationModel(
               request.params.appID
             ).navigationStream = request.params.url;
@@ -408,10 +417,10 @@ FFW.Navigation = FFW.RPCObserver.create(
             SDL.SDLController.getApplicationModel(
               request.params.appID
             ).navigationStream = null;
-            if (this.startVideoStreamingPopup && this.startVideoStreamingPopup.active) {
-              this.startVideoStreamingPopup.deactivate();
-              this.set('startVideoStreamingPopup', null);
-            }
+//            if (this.startVideoStreamingPopup && this.startVideoStreamingPopup.active) {
+//              this.startVideoStreamingPopup.deactivate();
+//              this.set('startVideoStreamingPopup', null);
+//            }
             this.sendNavigationResult(
               SDL.SDLModel.data.resultCode.SUCCESS,
               request.id,

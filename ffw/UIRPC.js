@@ -1240,7 +1240,7 @@ FFW.UI = FFW.RPCObserver.create(
                   'screenParams': {
                     'resolution': {
                       'resolutionWidth': 800,
-                      'resolutionHeight': 480
+                      'resolutionHeight': 384
                     },
                     'touchEventAvailable': {
                       'pressAvailable': true,

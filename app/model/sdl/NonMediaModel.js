@@ -139,15 +139,15 @@ SDL.SDLNonMediaModel = SDL.ABSAppModel.extend({
     for (var i = 0; i < params.showStrings.length; i++) {
       switch (params.showStrings[i].fieldName) {
         case 'mainField1': {
-          this.appInfo.set('field1', params.showStrings[i].fieldText);
+          this.appInfo.set('field122', params.showStrings[i].fieldText);
           break;
         }
         case 'mainField2': {
-          this.appInfo.set('field2', params.showStrings[i].fieldText);
+          this.appInfo.set('field233', params.showStrings[i].fieldText);
           break;
         }
         case 'mainField3': {
-          this.appInfo.set('field3', params.showStrings[i].fieldText);
+          this.appInfo.set('field3_NonMediaModel.js 150', params.showStrings[i].fieldText);
           break;
         }
         case 'mainField4': {

@@ -183,9 +183,9 @@ FFW.BasicCommunication = FFW.RPCObserver
         if (response.result.method == 'SDL.ActivateApp') {
           Em.Logger.log('SDL.ActivateApp: Response from SDL!');
           if (response.id in SDL.SDLModel.data.activateAppRequestsList) {
-            var appID = SDL.SDLModel.data.activateAppRequestsList[response.id].appID,
-              popUp = SDL.SDLModel.data.activateAppRequestsList[response.id].popUp;
-            popUp.deactivate();
+            var appID = SDL.SDLModel.data.activateAppRequestsList[response.id].appID;
+//              popUp = SDL.SDLModel.data.activateAppRequestsList[response.id].popUp;
+//            popUp.deactivate();
             if (!response.result.isSDLAllowed) {
               SDL.SettingsController.currentDeviceAllowance
                 = response.result.device;
@@ -234,7 +234,7 @@ FFW.BasicCommunication = FFW.RPCObserver
         }
         if (response.result.method == 'SDL.GetStatusUpdate') {
           Em.Logger.log('SDL.GetStatusUpdate: Response from SDL!');
-          SDL.PopUp.create().appendTo('body').popupActivate(response.result);
+//          SDL.PopUp.create().appendTo('body').popupActivate(response.result);
         }
         if (response.result.method == 'SDL.GetURLS') {
           SDL.SDLModel.data.set('policyURLs', response.result.urls);
@@ -253,20 +253,20 @@ FFW.BasicCommunication = FFW.RPCObserver
         Em.Logger.log('FFW.BasicCommunicationRPC.onRPCError');
         this._super();
         if (response.error.data.method === 'SDL.ActivateApp') {
-          var appID = SDL.SDLModel.data.activateAppRequestsList[response.id].appID,
-            popUp = SDL.SDLModel.data.activateAppRequestsList[response.id].popUp;
-          popUp.deactivate();
+          var appID = SDL.SDLModel.data.activateAppRequestsList[response.id].appID;
+//            popUp = SDL.SDLModel.data.activateAppRequestsList[response.id].popUp;
+//          popUp.deactivate();
           if (response.error.code ===
             SDL.SDLModel.data.resultCode['APPLICATION_NOT_REGISTERED']) {
-            SDL.PopUp.create().appendTo('body').popupActivate(
-              'Activation FAILED! Application NOT registered.'
-            );
+//            SDL.PopUp.create().appendTo('body').popupActivate(
+//              'Activation FAILED! Application NOT registered.'
+//            );
             return;
           } else if (response.error.code ===
             SDL.SDLModel.data.resultCode.REJECTED) {
-            SDL.PopUp.create().appendTo('body').popupActivate(
-              'Activation FAILED! SDL rejected activation.'
-            );
+//            SDL.PopUp.create().appendTo('body').popupActivate(
+//              'Activation FAILED! SDL rejected activation.'
+//            );
             return;
           }
         }
@@ -281,9 +281,9 @@ FFW.BasicCommunication = FFW.RPCObserver
           SDL.SDLModel.onFileRemoved(notification.params);
         }
         if (notification.method == this.onStatusUpdateNotification) {
-          SDL.PopUp.create().appendTo('body').popupActivate(
-            'onStatusUpdate Notification: ' + notification.params.status
-          );
+//          SDL.PopUp.create().appendTo('body').popupActivate(
+//            'onStatusUpdate Notification: ' + notification.params.status
+//          );
           var messageCode = '';
           switch (notification.params.status) {
             case 'UP_TO_DATE':
@@ -528,10 +528,10 @@ FFW.BasicCommunication = FFW.RPCObserver
       ActivateApp: function(appID) {
         var itemIndex = this.client.generateId();
         SDL.SDLModel.data.activateAppRequestsList[itemIndex] = {
-          'appID': appID,
-          'popUp': SDL.PopUp.create().appendTo('body').popupActivate(
-            'Activation in progress...', null, true
-          )
+          'appID': appID
+//          'popUp': SDL.PopUp.create().appendTo('body').popupActivate(
+//            'Activation in progress...222', null, true
+//          )
         };
         Em.Logger.log('SDL.ActivateApp: Request from HMI!');
         // send notification

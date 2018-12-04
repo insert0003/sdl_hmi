@@ -64,7 +64,16 @@ SDL.NavigationAppView = Em.ContainerView.create(
     videoView: Ember.View.create(
       {
         templateName: 'video',
-        template: Ember.Handlebars.compile('<video id="html5Player"></video>')
+        template: Ember.Handlebars.compile('<canvas id=html5Canvas></canvas>')
+/*        template: Ember.Handlebars.compile(' \
+                    var canvas = document.createElement("canvas"); \
+                    document.body.appendChild(canvas); \
+                    // Create h264 player \
+                    var uri = "ws://" + document.location.host; \
+                    var wsavc = new WSAvcPlayer(canvas, "webgl", 1, 35); \
+                    wsavc.connect(uri); \
+                    //expose instance for button callbacks \
+                    window.wsavc = wsavc;')*/
       }
     )
   }
