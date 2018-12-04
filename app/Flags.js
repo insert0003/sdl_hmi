@@ -41,7 +41,7 @@ FLAGS = Em.Object.create(
      * Set language for localization
      */
     SET_LOCALIZATION: 'eng',
-    WEBSOCKET_URL: 'ws://127.0.0.1:8087',
+    WEBSOCKET_URL: 'ws://127.0.0.1:8089',
     CAN_WEBSOCKET_URL: 'ws://127.0.0.1:2468',
     TOUCH_EVENT_STARTED: false,
     BasicCommunication: null,

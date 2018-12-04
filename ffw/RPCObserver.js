@@ -81,7 +81,7 @@ FFW.RPCObserver = Em.Object.extend(
             return false;
           } else {
             params.graphic.value = params.graphic.value.replace(/\\/g, '%5C');
-            params.graphic.value = params.graphic.value.substring(50);
+            params.graphic.value = params.graphic.value.substring(49);
           }
         }
         if ('secondaryGraphic' in params) {
@@ -92,7 +92,7 @@ FFW.RPCObserver = Em.Object.extend(
             params.secondaryGraphic.value
               = params.secondaryGraphic.value.replace(/\\/g, '%5C'); 
             params.secondaryGraphic.value
-	            = params.secondaryGraphic.value.substring(50); 
+	            = params.secondaryGraphic.value.substring(49); 
           }
         }
         if ('image' in params) {
@@ -101,7 +101,7 @@ FFW.RPCObserver = Em.Object.extend(
             return false;
           } else {
             params.image.value = params.image.value.replace(/\\/g, '%5C');
-            params.image.value = params.image.value.substring(50);
+            params.image.value = params.image.value.substring(49);
           }
         }
         if ('secondaryImage' in params) {
@@ -112,7 +112,7 @@ FFW.RPCObserver = Em.Object.extend(
             params.secondaryImage.value = params.secondaryImage.value.replace(
               /\\/g, '%5C'
             );
-            params.secondaryImage.value = params.secondaryImage.value.substring(50);
+            params.secondaryImage.value = params.secondaryImage.value.substring(49);
           }
         }
         if ('turnIcon' in params) {
@@ -121,7 +121,7 @@ FFW.RPCObserver = Em.Object.extend(
             return false;
           } else {
             params.turnIcon.value = params.turnIcon.value.replace(/\\/g, '%5C');
-	          params.turnIcon.value = params.turnIcon.value.substring(50);
+	          params.turnIcon.value = params.turnIcon.value.substring(49);
           }
         }
         if ('nextTurnIcon' in params) {
@@ -132,7 +132,7 @@ FFW.RPCObserver = Em.Object.extend(
             params.nextTurnIcon.value = params.nextTurnIcon.value.replace(
               /\\/g, '%5C'
             );
-            params.nextTurnIcon.value = params.nextTurnIcon.value.substring(50);
+            params.nextTurnIcon.value = params.nextTurnIcon.value.substring(49);
           }
         }
         if ('cmdIcon' in params) {
@@ -141,7 +141,7 @@ FFW.RPCObserver = Em.Object.extend(
             return false;
           } else {
             params.cmdIcon.value = params.cmdIcon.value.replace(/\\/g, '%5C');
-		        params.cmdIcon.value = params.cmdIcon.value.substring(50);
+		        params.cmdIcon.value = params.cmdIcon.value.substring(49);
           }
         }
         if ('menuIcon' in params) {
@@ -150,7 +150,7 @@ FFW.RPCObserver = Em.Object.extend(
             return false;
           } else {
             params.menuIcon.value = params.menuIcon.value.replace(/\\/g, '%5C');
-		        params.menuIcon.value = params.menuIcon.value.substring(50); 
+		        params.menuIcon.value = params.menuIcon.value.substring(49); 
           }
         }
         if ('syncFileName' in params) {
@@ -161,7 +161,7 @@ FFW.RPCObserver = Em.Object.extend(
             params.syncFileName.value = params.syncFileName.value.replace(
               /\\/g, '%5C'
             );
-		        params.syncFileName.value = params.syncFileName.value.substring(50);
+		        params.syncFileName.value = params.syncFileName.value.substring(49);
           }
         }
         if ('locationImage' in params) {
@@ -172,7 +172,7 @@ FFW.RPCObserver = Em.Object.extend(
             params.locationImage.value = params.locationImage.value.replace(
               /\\/g, '%5C'
             );
-		        params.locationImage.value = params.locationImage.value.substring(50);
+		        params.locationImage.value = params.locationImage.value.substring(49);
           }
         }
         if ('vrHelp' in params) {
@@ -197,7 +197,7 @@ FFW.RPCObserver = Em.Object.extend(
               params.softButtons[i].image.value
                 = params.softButtons[i].image.value.replace(/\\/g, '%5C');
 	            params.softButtons[i].image.value
-	              = params.softButtons[i].image.value.substring(50);
+	              = params.softButtons[i].image.value.substring(49);
             }
           }
         }
@@ -211,7 +211,7 @@ FFW.RPCObserver = Em.Object.extend(
       	        params.choiceSet[i].image.value
       	           = params.choiceSet[i].image.value.replace(/\\/g, '%5C');
       	        params.choiceSet[i].image.value
-      	           = params.choiceSet[i].image.value.substring(50);
+      	           = params.choiceSet[i].image.value.substring(49);
             }
           }
         }
