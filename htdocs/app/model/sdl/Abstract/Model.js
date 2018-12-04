@@ -464,8 +464,8 @@ SDL.SDLModel = Em.Object.extend({
 
       //expose instance for button callbacks
       SDL.SDLModel.data.naviCanvas = wsavc;
-    }
-    SDL.SDLModel.data.naviCanvas.stopStream();*/
+    } */
+    SDL.SDLModel.data.naviCanvas.stopStream();
 /*
     var createVideoView = Ember.View.create({
           templateName: 'video',
