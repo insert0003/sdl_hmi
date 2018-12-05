@@ -75,13 +75,14 @@ FFW.RPCObserver = Em.Object.extend(
      */
     checkImage: function(params) {
       if (params) {
+        var matchstr = "/storage";
         if ('graphic' in params) {
           if (params.graphic.imageType === 'STATIC') {
             delete params.graphic;
             return false;
           } else {
             params.graphic.value = params.graphic.value.replace(/\\/g, '%5C');
-            params.graphic.value = params.graphic.value.substring(49);
+            params.graphic.value = params.graphic.value.substring(params.graphic.value.indexOf(matchstr));
           }
         }
         if ('secondaryGraphic' in params) {
@@ -92,7 +93,7 @@ FFW.RPCObserver = Em.Object.extend(
             params.secondaryGraphic.value
               = params.secondaryGraphic.value.replace(/\\/g, '%5C'); 
             params.secondaryGraphic.value
-	            = params.secondaryGraphic.value.substring(49); 
+	            = params.secondaryGraphic.value.substring(params.secondaryGraphic.value.indexOf(matchstr)); 
           }
         }
         if ('image' in params) {
@@ -101,7 +102,7 @@ FFW.RPCObserver = Em.Object.extend(
             return false;
           } else {
             params.image.value = params.image.value.replace(/\\/g, '%5C');
-            params.image.value = params.image.value.substring(49);
+            params.image.value = params.image.value.substring(params.image.value.indexOf(matchstr));
           }
         }
         if ('secondaryImage' in params) {
@@ -112,7 +113,7 @@ FFW.RPCObserver = Em.Object.extend(
             params.secondaryImage.value = params.secondaryImage.value.replace(
               /\\/g, '%5C'
             );
-            params.secondaryImage.value = params.secondaryImage.value.substring(49);
+            params.secondaryImage.value = params.secondaryImage.value.substring(params.secondaryImage.value.indexOf(matchstr));
           }
         }
         if ('turnIcon' in params) {
@@ -121,7 +122,7 @@ FFW.RPCObserver = Em.Object.extend(
             return false;
           } else {
             params.turnIcon.value = params.turnIcon.value.replace(/\\/g, '%5C');
-	          params.turnIcon.value = params.turnIcon.value.substring(49);
+	          params.turnIcon.value = params.turnIcon.value.substring(params.turnIcon.value.indexOf(matchstr));
           }
         }
         if ('nextTurnIcon' in params) {
@@ -132,7 +133,7 @@ FFW.RPCObserver = Em.Object.extend(
             params.nextTurnIcon.value = params.nextTurnIcon.value.replace(
               /\\/g, '%5C'
             );
-            params.nextTurnIcon.value = params.nextTurnIcon.value.substring(49);
+            params.nextTurnIcon.value = params.nextTurnIcon.value.substring(params.nextTurnIcon.value.indexOf(matchstr));
           }
         }
         if ('cmdIcon' in params) {
@@ -141,7 +142,7 @@ FFW.RPCObserver = Em.Object.extend(
             return false;
           } else {
             params.cmdIcon.value = params.cmdIcon.value.replace(/\\/g, '%5C');
-		        params.cmdIcon.value = params.cmdIcon.value.substring(49);
+		        params.cmdIcon.value = params.cmdIcon.value.substring(params.cmdIcon.value.indexOf(matchstr));
           }
         }
         if ('menuIcon' in params) {
@@ -150,7 +151,7 @@ FFW.RPCObserver = Em.Object.extend(
             return false;
           } else {
             params.menuIcon.value = params.menuIcon.value.replace(/\\/g, '%5C');
-		        params.menuIcon.value = params.menuIcon.value.substring(49); 
+		        params.menuIcon.value = params.menuIcon.value.substring(params.menuIcon.value.indexOf(matchstr)); 
           }
         }
         if ('syncFileName' in params) {
@@ -161,7 +162,7 @@ FFW.RPCObserver = Em.Object.extend(
             params.syncFileName.value = params.syncFileName.value.replace(
               /\\/g, '%5C'
             );
-		        params.syncFileName.value = params.syncFileName.value.substring(49);
+		        params.syncFileName.value = params.syncFileName.value.substring(params.syncFileName.value.indexOf(matchstr));
           }
         }
         if ('locationImage' in params) {
@@ -172,7 +173,7 @@ FFW.RPCObserver = Em.Object.extend(
             params.locationImage.value = params.locationImage.value.replace(
               /\\/g, '%5C'
             );
-		        params.locationImage.value = params.locationImage.value.substring(49);
+		        params.locationImage.value = params.locationImage.value.substring(params.locationImage.value.indexOf(matchstr));
           }
         }
         if ('vrHelp' in params) {
@@ -197,7 +198,7 @@ FFW.RPCObserver = Em.Object.extend(
               params.softButtons[i].image.value
                 = params.softButtons[i].image.value.replace(/\\/g, '%5C');
 	            params.softButtons[i].image.value
-	              = params.softButtons[i].image.value.substring(49);
+	              = params.softButtons[i].image.value.substring(params.softButtons[i].image.value.indexOf(matchstr));
             }
           }
         }
@@ -211,7 +212,7 @@ FFW.RPCObserver = Em.Object.extend(
       	        params.choiceSet[i].image.value
       	           = params.choiceSet[i].image.value.replace(/\\/g, '%5C');
       	        params.choiceSet[i].image.value
-      	           = params.choiceSet[i].image.value.substring(49);
+      	           = params.choiceSet[i].image.value.substring(params.choiceSet[i].image.value.indexOf(matchstr));
             }
           }
         }
