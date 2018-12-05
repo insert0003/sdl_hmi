@@ -21,9 +21,8 @@ path = "/usr/bin/chromium"
      "--disable-infobars",
      "--kiosk",
      "--incognito",
-     "--enable-logging",
-     "--log-level=0",
-     "--window-size=800,506",
+     "--app",
+     "--window-size=800,480",
      "--ozone-platform=wayland",
      "http://localhost:@port@"
    ]
