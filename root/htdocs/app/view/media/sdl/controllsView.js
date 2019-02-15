@@ -36,8 +36,8 @@ SDL.SDLMediaControlls = Em.ContainerView.create(
   {
     childViews: [
       'info',
-      'Controls',
-      'tuneButtons'
+      'Controls'
+//      'tuneButtons'
     ],
     /**
      * Verification paramiter
